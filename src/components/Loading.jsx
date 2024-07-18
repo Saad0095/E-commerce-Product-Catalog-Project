@@ -3,7 +3,7 @@ import "./Loading.css"
 
 const Loading = () => {
     return (
-        <div className=' flex justify-center h-full mt-52'>
+        <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             <div className="spinner">
                 <div></div>
                 <div></div>
