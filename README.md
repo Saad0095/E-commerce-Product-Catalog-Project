@@ -1,8 +1,22 @@
-# React + Vite
+# E-commerce Product Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Introduction
+This project is a dynamic e-commerce product catalog built using React. Users can browse products, view detailed product information, add items to a shopping cart, and proceed to checkout. The project showcases key React concepts such as component structure, state management, and routing with react-router-dom. Styling is handled using Tailwind CSS for a clean and responsive user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Product Listing**: List products with details.
+- **Product Details**: View detailed product info.
+- **Shopping Cart**: Add products to cart.
+- **Checkout Process**: Proceed to checkout.
+- **Search and Filter**: Search and filter products.
+
+
+## Technologies
+- React
+- React Router DOM
+- Axios
+- Tailwind CSS
+
+## API
+This project uses the DummyJSON API for product data.

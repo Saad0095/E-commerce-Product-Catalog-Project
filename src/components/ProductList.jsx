@@ -10,7 +10,7 @@ const ProductList = ({products}) => {
           return (
             <div
               key={product.id}
-              className="border-gray-400 border-2 flex flex-col h-full justify-between m-4"
+              className="border-gray-400 border-2 flex flex-col h-full justify-between"
             >
               <Link to={`/${product.id}`}>
                 <img
@@ -24,7 +24,6 @@ const ProductList = ({products}) => {
                   <p>
                     <b>Price: ${product.price}</b>
                   </p>
-                  {/* <p>Ratings: {product.rating}</p> */}
                 </div>
               </Link>
               <button

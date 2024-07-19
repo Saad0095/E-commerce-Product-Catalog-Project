@@ -12,6 +12,7 @@ const MainPage = () => {
   const [searchedValue, setSearchedValue] = useState("");
   const [msg, setMsg] = useState("");
 
+  // Fetching Products
   const getData = async () => {
     try {
       const response = await axios.get("https://dummyjson.com/products");
@@ -74,7 +75,7 @@ const MainPage = () => {
       <div>
         {searchedProducts ? (
           <div>
-            <div className="error-msg">{msg}</div>
+            <div className="error-msg ml-5">{msg}</div>
             <ProductList products={searchedProducts} />
           </div>
         ) : (

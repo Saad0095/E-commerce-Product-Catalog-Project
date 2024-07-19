@@ -16,7 +16,7 @@ const Categories = ({handleCategoryClick}) => {
     getCategories();
   }, []);
   return (
-    <div className="">
+    <div className="categories-list">
       <ul className="flex space-x-4 flex-wrap text-gray-700 p-4 bg-gray justify-center">
         {categories.map((category, index) => {
           return (
