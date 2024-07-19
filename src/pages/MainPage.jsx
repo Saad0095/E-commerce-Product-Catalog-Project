@@ -15,7 +15,8 @@ const MainPage = () => {
   // Fetching Products
   const getData = async () => {
     try {
-      const response = await axios.get("https://dummyjson.com/products");
+      // const response = await axios.get("https://dummyjson.com/products");
+      const response = await axios.get("https://dummyjson.com/products?limit=40");
       setProducts(response.data.products);
       setSearchedProducts(response.data.products);
     } catch (error) {
@@ -37,6 +38,7 @@ const MainPage = () => {
   const handleSearch = async () => {
     if (searchedValue == "") {
       setSearchedProducts(products);
+      setMsg("");
     } else {
       try {
         const response = await axios.get(
@@ -50,7 +52,8 @@ const MainPage = () => {
           setSearchedProducts(response.data.products);
         }
       } catch (error) {
-        console.log("Product Not Found");
+        setMsg("Unexpected Error Occured, Please try again later!");
+        console.log(error);
       }
     }
   };
@@ -70,11 +73,13 @@ const MainPage = () => {
 
   return (
     <div className="container mx-auto">
-      <Categories handleCategoryClick={handleCategoryClick} />
-      <SearchBar searchedValue={searchedValue} handleChange={handleChange} />
       <div>
         {searchedProducts ? (
           <div>
+            <Hero/>
+            <hr />
+            <Categories handleCategoryClick={handleCategoryClick} />
+            <SearchBar searchedValue={searchedValue} handleChange={handleChange} />
             <div className="error-msg ml-5">{msg}</div>
             <ProductList products={searchedProducts} />
           </div>
