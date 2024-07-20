@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from './Loading'
 
-const ProductDetail = () => {
+const ProductDetail = ({addToCart}) => {
     const { productId } = useParams()
     const [product, setProduct] = useState(null)
 
@@ -27,7 +27,7 @@ const ProductDetail = () => {
                     <p><b>Return Policy: </b>{product.returnPolicy}</p>
                     <p><b>Availibilty Status: </b>{product.availabilityStatus}</p>
                     <p><b>Price: </b>{product.price}</p>
-                    <button type="button" className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900 w-1/3 mx-auto mb-4">Add to Cart</button>
+                    <button type="button" className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900 w-1/3 mx-auto mb-4" onClick={()=> addToCart(product)}>Add to Cart</button>
 
                 </div> :
                 <Loading />

@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
-const ProductList = ({products}) => {
+const ProductList = ({products,addToCart}) => {
   return (
     <div>
       <div className="products-listing">
@@ -29,7 +28,8 @@ const ProductList = ({products}) => {
               <button
                 type="button"
                 className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:focus:ring-yellow-900 w-11/12 mx-auto mb-4"
-              >
+                onClick={() => addToCart(product)}
+                >
                 Add to Cart
               </button>
             </div>

@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
 import Categories from "../components/Categories";
 
-const MainPage = () => {
+const MainPage = ({ addToCart }) => {
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState();
   const [searchedValue, setSearchedValue] = useState("");
@@ -81,7 +81,7 @@ const MainPage = () => {
             <Categories handleCategoryClick={handleCategoryClick} />
             <SearchBar searchedValue={searchedValue} handleChange={handleChange} />
             <div className="error-msg ml-5">{msg}</div>
-            <ProductList products={searchedProducts} />
+            <ProductList products={searchedProducts} addToCart={addToCart}/>
           </div>
         ) : (
           <Loading />
