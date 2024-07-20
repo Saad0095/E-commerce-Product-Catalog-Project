@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Cart = ({ cart, removeFromCart, clearCart }) => {
+
   return (
     <div>
       {cart.length !== 0 ? (
@@ -14,7 +15,11 @@ const Cart = ({ cart, removeFromCart, clearCart }) => {
                   className="flex h-16 justify-between items-center my-7 mx-5"
                 >
                   <div className="flex items-center h-full">
-                    <img src={product.thumbnail} alt="" className="h-full border-gray-200 border-2" />
+                    <img
+                      src={product.thumbnail}
+                      alt=""
+                      className="h-full border-gray-200 border-2"
+                    />
                     <div className=" mx-5">
                       <h3>{product.title}</h3>
                       <h4>${product.price}</h4>
@@ -32,10 +37,14 @@ const Cart = ({ cart, removeFromCart, clearCart }) => {
           </ul>
           <div className="buttons flex justify-center items-center">
             <Link to="/">
-              <button className="bg-blue-700 text-white p-3 rounded-lg m-2">Continue Shopping</button>
+              <button className="bg-blue-700 text-white p-3 rounded-lg m-2">
+                Continue Shopping
+              </button>
             </Link>
             <Link to="/checkout">
-              <button className="bg-green-700 text-white p-3 rounded-lg m-2">Proceed To Checkout</button>
+              <button className="bg-green-700 text-white p-3 rounded-lg m-2">
+                Proceed To Checkout
+              </button>
             </Link>
           </div>
         </div>
@@ -43,7 +52,9 @@ const Cart = ({ cart, removeFromCart, clearCart }) => {
         <div className="flex items-center justify-center w-full flex-col mt-28">
           <h1 className="m-5">Your Cart is empty</h1>
           <Link to="/">
-            <button className="bg-red-700 text-white p-3 rounded-lg">Back To HomePage</button>
+            <button className="bg-red-700 text-white p-3 rounded-lg">
+              Back To HomePage
+            </button>
           </Link>
         </div>
       )}

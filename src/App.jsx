@@ -14,6 +14,12 @@ function App() {
 
  const [cart,setCart] = useState([])
 
+ const [itemsNo, setItemsNo] = useState()
+
+ useEffect(() => {
+   setItemsNo(cart.length);
+ }, [cart]);
+
  const addToCart = (product) =>{
   setCart([...cart,product])
  }
@@ -33,10 +39,10 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header itemsNo={itemsNo}/>
       <main>
         <Routes>
-          <Route path='/' element={<MainPage addToCart={addToCart} />}  />
+          <Route path='/' element={<MainPage cart={cart} addToCart={addToCart} itemsNo={itemsNo}/>}  />
           <Route path='/:productId' element={<ProductDetail addToCart={addToCart} />}  />
           <Route path='contact' element={<Contact />} />
           <Route path='cart' element={<Cart  removeFromCart={removeFromCart} cart={cart} clearCart={clearCart} />}/>

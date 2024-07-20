@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../components/Loading";
 import Hero from "../components/Hero";
 import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
 import Categories from "../components/Categories";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 
-const MainPage = ({ addToCart }) => {
+const MainPage = ({cart, itemsNo, addToCart }) => {
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState();
   const [searchedValue, setSearchedValue] = useState("");
@@ -16,7 +19,9 @@ const MainPage = ({ addToCart }) => {
   const getData = async () => {
     try {
       // const response = await axios.get("https://dummyjson.com/products");
-      const response = await axios.get("https://dummyjson.com/products?limit=40");
+      const response = await axios.get(
+        "https://dummyjson.com/products?limit=40"
+      );
       setProducts(response.data.products);
       setSearchedProducts(response.data.products);
     } catch (error) {
@@ -76,12 +81,37 @@ const MainPage = ({ addToCart }) => {
       <div>
         {searchedProducts ? (
           <div>
-            <Hero/>
+            <Hero />
             <hr />
             <Categories handleCategoryClick={handleCategoryClick} />
-            <SearchBar searchedValue={searchedValue} handleChange={handleChange} />
+            <SearchBar
+              searchedValue={searchedValue}
+              handleChange={handleChange}
+            />
             <div className="error-msg ml-5">{msg}</div>
-            <ProductList products={searchedProducts} addToCart={addToCart}/>
+            <ProductList products={searchedProducts} addToCart={addToCart} />
+            {cart.length !== 0 && (
+              <div
+                className="fixed bottom-7 right-7 bg-yellow-500 p-2"
+                style={{ borderRadius: "50%" }}
+              >
+                <Link
+                  to="/cart"
+                  className="flex justify-center items-center relative left-2"
+                >
+                  <FontAwesomeIcon
+                    icon={faBasketShopping}
+                    className="text-white"
+                  />
+                  <span
+                    className="text-white relative right-1 bottom-2 p-1 text-sm border-black font-bold"
+                    style={{ borderRadius: "50%" }}
+                  >
+                    {itemsNo}
+                  </span>
+                </Link>
+              </div>
+            )}
           </div>
         ) : (
           <Loading />

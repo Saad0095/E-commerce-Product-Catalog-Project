@@ -14,14 +14,6 @@ const Hero = () => {
             <p className="mb-8 leading-relaxed">
               Explore our range of premium products crafted to perfection. From stylish apparel to cutting-edge gadgets, find everything you need to enhance your lifestyle. Shop now and enjoy exceptional quality and unbeatable prices.
             </p>
-            {/* <div className="flex justify-center">
-              <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Shop Now
-              </button>
-              <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                Learn More
-              </button>
-            </div> */}
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 flex items-center justify-center">
             <img

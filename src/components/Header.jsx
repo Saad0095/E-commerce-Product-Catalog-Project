@@ -1,16 +1,13 @@
 import React from "react";
-import axios from "axios";
 import { Link, NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-const Header = () => {
+const Header = ({itemsNo}) => {
  
   return (
     <div>
-      <nav className="flex justify-between items-center bg-cyan-900 border-b-2 h-12 text-white px-3 w-full">
+      <nav className="flex justify-between items-center bg-black border-b-2 h-12 text-white px-3 w-full">
         <div className="logo">
           <h1>E-Buy</h1>
         </div>
@@ -19,6 +16,7 @@ const Header = () => {
           <NavLink to="/contact">Contact Us</NavLink>
           <NavLink to="/cart" className="flex items-center">
             <FontAwesomeIcon icon={faShoppingCart} className="" />
+            <span className="text-yellow-500 bg-gray-50 relative right-1 bottom-2 p-1 text-sm border-black" style={{borderRadius:"50%"}}>{itemsNo}</span>
           </NavLink>
         </ul>
       </nav>
