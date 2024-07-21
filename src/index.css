@@ -44,3 +44,10 @@ main {
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 15px;
 }
+
+@media screen and (max-width: 770px) {
+  .hero-image {
+    display:none;
+  }
+
+}
