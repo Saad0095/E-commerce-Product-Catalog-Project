@@ -9,7 +9,7 @@ const ProductList = ({products,addToCart}) => {
           return (
             <div
               key={product.id}
-              className="border-gray-400 border-2 flex flex-col h-full justify-between"
+              className=" border-gray-400 border-2 flex flex-col h-full justify-between items-center mx-auto"
             >
               <Link to={`/${product.id}`}>
                 <img
