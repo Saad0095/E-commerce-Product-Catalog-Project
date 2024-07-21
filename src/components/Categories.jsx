@@ -19,7 +19,7 @@ const Categories = ({handleCategoryClick}) => {
   return (
     <div className="categories-list mt-5 animate__animated animate__fadeIn animate__delay-1s">
         <h1 className="text-center">Explore Categories</h1>
-      <ul className="flex space-x-4 flex-wrap text-gray-700 p-4 bg-gray justify-center">
+      <ul className="flex space-x-4 flex-wrap text-gray-700 p-4 bg-gray justify-center items-center ">
         {categories.map((category, index) => {
           return (
             <Link
