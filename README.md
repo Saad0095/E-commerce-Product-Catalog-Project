@@ -9,7 +9,7 @@ This project is a dynamic e-commerce product catalog built using React. Users ca
 - **Product Details**: View detailed product info.
 - **Shopping Cart**: Add products to cart.
 - **Checkout Process**: Proceed to checkout.
-- **Search and Filter**: Search and filter products.
+- **Search and Filter**: Search and filter products via category.
 
 
 ## Technologies

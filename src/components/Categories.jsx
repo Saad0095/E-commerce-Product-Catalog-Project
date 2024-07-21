@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 const Categories = ({handleCategoryClick}) => {
   const [categories, setCategories] = useState([]);
@@ -16,13 +17,13 @@ const Categories = ({handleCategoryClick}) => {
     getCategories();
   }, []);
   return (
-    <div className="categories-list mt-5">
+    <div className="categories-list mt-5 animate__animated animate__fadeIn animate__delay-1s">
         <h1 className="text-center">Explore Categories</h1>
       <ul className="flex space-x-4 flex-wrap text-gray-700 p-4 bg-gray justify-center">
         {categories.map((category, index) => {
           return (
             <Link
-              className="p-3 hover:bg-cyan-500 hover:text-white rounded-3xl"
+              className="p-3 hover:bg-yellow-400 font-medium hover:text-white rounded-3xl"
               key={index}
               onClick={()=> handleCategoryClick(category)}
             >
