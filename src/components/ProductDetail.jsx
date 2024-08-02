@@ -1,9 +1,11 @@
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from './Loading'
+import CartContext from '../context/CartContext'
 
-const ProductDetail = ({addToCart}) => {
+const ProductDetail = () => {
+    const {addToCart} = useContext(CartContext)
     const { productId } = useParams()
     const [product, setProduct] = useState(null)
 

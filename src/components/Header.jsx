@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../context/CartContext";
 
-const Header = ({itemsNo}) => {
- 
+const Header = () => {
+ const {itemsNo} =useContext(CartContext)
   return (
     <div>
       <nav className="flex justify-between items-center bg-black border-b-2 h-12 text-white px-3 w-full">

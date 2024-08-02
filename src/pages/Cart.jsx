@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "../context/CartContext";
 
-const Cart = ({ cart, removeFromCart, clearCart }) => {
-
+const Cart = () => {
+  const { cart, removeFromCart } = useContext(CartContext);
   return (
     <div>
       {cart.length !== 0 ? (

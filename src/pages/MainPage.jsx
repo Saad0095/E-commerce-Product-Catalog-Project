@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../components/Loading";
@@ -8,8 +8,10 @@ import ProductList from "../components/ProductList";
 import Categories from "../components/Categories";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../context/CartContext";
 
-const MainPage = ({cart, itemsNo, addToCart }) => {
+const MainPage = () => {
+  const {cart,itemsNo} = useContext(CartContext)
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState();
   const [searchedValue, setSearchedValue] = useState("");
@@ -89,7 +91,7 @@ const MainPage = ({cart, itemsNo, addToCart }) => {
               handleChange={handleChange}
             />
             <div className="error-msg ml-5">{msg}</div>
-            <ProductList products={searchedProducts} addToCart={addToCart} />
+            <ProductList products={searchedProducts} />
             {cart.length !== 0 && (
               <div
                 className="fixed bottom-7 right-7 bg-yellow-500 p-2"
