@@ -20,9 +20,8 @@ const MainPage = () => {
   // Fetching Products
   const getData = async () => {
     try {
-      // const response = await axios.get("https://dummyjson.com/products");
       const response = await axios.get(
-        "https://dummyjson.com/products?limit=40"
+        'https://dummyjson.com/products?limit=20&skip=10'
       );
       setProducts(response.data.products);
       setSearchedProducts(response.data.products);
@@ -37,7 +36,6 @@ const MainPage = () => {
 
   const handleChange = (e) => {
     setSearchedValue(e.target.value);
-    // handleSearch(e.target.value);
     handleSearch();
   };
 
@@ -52,11 +50,11 @@ const MainPage = () => {
           `https://dummyjson.com/products/search?q=${searchedValue}`
         );
         if (response.data.products.length === 0) {
-          setMsg("No Product Found");
           setSearchedProducts([]);
+          setMsg("No Product Found");
         } else {
-          setMsg(`${response.data.products.length} Products Found`);
           setSearchedProducts(response.data.products);
+          setMsg(`${response.data.products.length} Products Found`);
         }
       } catch (error) {
         setMsg("Unexpected Error Occured, Please try again later!");

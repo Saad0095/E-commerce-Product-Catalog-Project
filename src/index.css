@@ -21,12 +21,20 @@ nav ul a {
   text-decoration: none;
   color: inherit;
   font-weight: 600;
+  font-size: 17px;
   margin: 10px;
   padding: 10px;
+  transition: transform 0.1s;
+
 }
 
-a.active {
-  color: rgb(234 179 8 / var(--tw-text-opacity));
+nav a:hover {
+  color:#EAB308;
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  color:#EAB308;
 }
 
 main {

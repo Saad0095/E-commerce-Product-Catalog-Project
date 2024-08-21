@@ -4,15 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import CartContext from "../context/CartContext";
 
-const Header = () => {
+const Navbar = () => {
  const {itemsNo} =useContext(CartContext)
   return (
     <div>
-      <nav className="flex justify-between items-center bg-black border-b-2 h-12 text-white px-3 w-full">
-        <div className="logo">
+      <nav className="flex justify-between items-center h-16 w-full px-5 md:px-10 shadow-lg shadow-gray-200">
+        <div className="logo text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-800">
           <h1>E-Buy</h1>
         </div>
-        <ul className="flex justify-center items-center">
+        <ul className="flex justify-center items-center space-x-0 sm:space-x-4">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
           <NavLink to="/cart" className="flex items-center">
@@ -26,4 +26,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

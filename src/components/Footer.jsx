@@ -2,11 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-10">
-      <footer className="text-gray-200 body-font bg-black">
+      <footer className="mt-10 py-2 shadow-lg shadow-black">
         <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
           <h1 className="ml-3 text-xl">E-Buy</h1>
-          <p className="text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+          <p className="text-sm text-gray-700 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-400 sm:py-2 sm:mt-0 mt-4">
             Copyright &copy; 2024. All Rights Reserved
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
@@ -84,7 +83,6 @@ const Footer = () => {
           </span>
         </div>
       </footer>
-    </div>
   );
 };
 
