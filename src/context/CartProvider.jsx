@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import CartContext from './CartContext'
 
 function CartProvider({children}) {
-    const [cart,setCart] = useState([])
+    const [cart,setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [])
     const [itemsNo, setItemsNo] = useState()
 
     useEffect(() => {
     setItemsNo(cart.length)
+    localStorage.setItem("cart",JSON.stringify(cart))
     }, [cart])
     
     const addToCart = (product) =>{

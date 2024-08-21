@@ -19,11 +19,9 @@ const Checkout = () => {
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    console.log(orderForm);
-
+    // alert("Your Order has been placed!");
+    navigate("/orderconfirmation");
     clearCart();
-    alert("Your Order has been placed!");
-    navigate("/");
   };
 
   useEffect(() => {

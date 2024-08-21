@@ -6,8 +6,7 @@ const Hero = () => {
     <div>
       <section className="text-gray-600 body-font">
         <div
-          className="hero container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
-          style={{ height: "570px" }}
+          className="hero container mx-auto flex px-5 py-24 h-[570px] md:flex-row flex-col "
         >
           <div className="animate__animated animate__bounceInUp lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center m-auto">
             <h1 className=" title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">

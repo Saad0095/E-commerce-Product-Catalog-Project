@@ -4,11 +4,10 @@ import MainPage from "./pages/MainPage";
 import ProductDetail from "./components/ProductDetail";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
-import "./App.css";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import CartProvider from "./context/CartProvider"
-import { useState, useEffect } from "react";
+import OrderConfirmation from "./pages/OrderConfirmation";
 
 function App() {
 
@@ -22,6 +21,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="orderconfirmation" element={<OrderConfirmation />} />
         </Routes>
       </main>
       <Footer />
