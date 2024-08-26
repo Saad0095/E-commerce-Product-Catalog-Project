@@ -11,7 +11,7 @@ import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import CartContext from "../context/CartContext";
 
 const MainPage = () => {
-  const {cart,itemsNo} = useContext(CartContext)
+  const { cart, itemsNo } = useContext(CartContext);
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState();
   const [searchedValue, setSearchedValue] = useState("");
@@ -21,7 +21,7 @@ const MainPage = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        'https://dummyjson.com/products?limit=20&skip=10'
+        "https://dummyjson.com/products?limit=20&skip=10"
       );
       setProducts(response.data.products);
       setSearchedProducts(response.data.products);
@@ -77,19 +77,20 @@ const MainPage = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <div>
         {searchedProducts ? (
           <div>
             <Hero />
             <hr />
-            <Categories handleCategoryClick={handleCategoryClick} />
             <SearchBar
               searchedValue={searchedValue}
               handleChange={handleChange}
             />
-            <div className="error-msg ml-5">{msg}</div>
-            <ProductList products={searchedProducts} />
+            <div className="flex justify-between">
+              <Categories handleCategoryClick={handleCategoryClick} />
+              <ProductList products={searchedProducts} msg={msg}/>
+            </div>
             {cart.length !== 0 && (
               <div
                 className="fixed bottom-7 right-7 bg-yellow-500 p-2"
