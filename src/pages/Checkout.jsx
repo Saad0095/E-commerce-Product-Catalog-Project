@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartContext from "../context/CartContext";
 
 const Checkout = () => {
@@ -128,6 +129,9 @@ const Checkout = () => {
           Place Order
         </button>
       </form>
+      <Link className="text-yellow-500 flex justify-center items-center text-center mt-10 font-bold" to="/">
+        Continue Shopping ?
+      </Link>
     </div>
   );
 };
